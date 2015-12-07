@@ -8,9 +8,16 @@ ITEM.static.validSlots = {
 
 function ITEM:initialize( id )
 	KInventory.Items.base_pointshop_item.initialize( self, id )
-	
+
 	self.saveFields = self.saveFields or {}
 	table.insert( self.saveFields, "text" )
+
+	self.text = self.text or "Change Me"
+
+	if CLIENT then
+		self.baseOutfit[1]["children"][1]["self"]["Text"] = self.text
+		self:SetText(text)
+	end
 end
 
 function ITEM.static.getOutfitForModel( model )
@@ -63,13 +70,22 @@ function ITEM.static.getOutfitForModel( model )
 end
 
 if CLIENT then
+	// Send text message to server
 	function ITEM:UserSetText( text )
-		self.text = string.sub( text, 15 )
 		self:ServerRPC( "UserSetText", text )
 	end
 
+	// Server tells all clients to update text
 	function ITEM:SetText( text )
 		self.text = text
+		if IsValid( self:GetOwner( ) ) and self:GetOwner().FindPACPart then
+			local textPart = self:GetOwner():FindPACPart( self.baseOutfit, "Hello" )
+			if not textPart then
+				print("no text part found")
+				return
+			end
+			textPart:SetText( self.text )
+		end
 	end
 else
 	function ITEM:UserSetText( text )
