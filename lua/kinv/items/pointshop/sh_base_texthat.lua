@@ -86,6 +86,7 @@ if CLIENT then
 			end
 			textPart:SetText( self.text )
 		end
+		self.baseOutfit[1]["children"][1]["self"]["Text"] = self.text
 	end
 else
 	function ITEM:UserSetText( text )
