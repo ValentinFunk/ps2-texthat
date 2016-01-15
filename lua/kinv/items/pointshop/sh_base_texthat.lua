@@ -175,3 +175,7 @@ end
 function ITEM.static.getPersistence( )
 	return Pointshop2.TexthatPersistence
 end
+
+function ITEM:NoPreview( )
+	return true
+end
