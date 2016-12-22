@@ -93,8 +93,8 @@ function ITEM.static.generateFromPersistence( itemTable, persistenceItem )
 		},
 	}
 
-	function itemTable:getOutfitForModel( )
-		return self.baseOutfit, 3385648173
+	function itemTable.getOutfitForModel( )
+		return itemTable.baseOutfit, 3385648173
 	end
 end
 

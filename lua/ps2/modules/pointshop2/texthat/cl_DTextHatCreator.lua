@@ -20,6 +20,7 @@ function PANEL:Init( )
 	self.textSize:SetValue( 10 )
 
     self.rainbowCheckbox = vgui.Create( "DCheckBoxLabel", self )
+	self.rainbowCheckbox:SetText("")
 	local pnl = self:addFormItem( "Rainbox Color", self.rainbowCheckbox )
 
 

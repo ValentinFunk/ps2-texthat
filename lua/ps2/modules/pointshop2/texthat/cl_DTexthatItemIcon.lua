@@ -26,7 +26,7 @@ function PANEL:Paint( w, h )
     if self.item.class.rainbow then
         self.item.class.color = HSVToColor( RealTime() * 20 % 360, 1, 1 )
     end
-    draw.SimpleTextOutlined( self.item.text or "Text Hat", self:GetSkin().TextFont, w / 2, h / 2, self.item.class.color, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, self.item.class.outlineColor )
+    draw.SimpleTextOutlined( self.item.text or "Change Me", self:GetSkin().TextFont, w / 2, h / 2, self.item.class.color, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, self.item.class.outlineColor )
 end
 
 function PANEL:Think( )
