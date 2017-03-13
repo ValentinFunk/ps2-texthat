@@ -31,6 +31,7 @@ if CLIENT then
 		if IsValid( self:GetOwner( ) ) and self:GetOwner().FindPACPart then
 			self.textPart = self:GetOwner():FindPACPart( self.baseOutfit, "Hello" )
 		end
+		ITEM.super.Think(self)
 	end
 	Pointshop2.AddItemHook("Think", ITEM)
 
