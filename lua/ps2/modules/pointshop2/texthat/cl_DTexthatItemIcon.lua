@@ -10,7 +10,8 @@ function PANEL:Paint( w, h )
     if self.itemClass.rainbow then
         self.itemClass.color = HSVToColor( RealTime() * 20 % 360, 1, 1 )
     end
-    draw.SimpleTextOutlined( "Text Hat", self:GetSkin().TabFont, w / 2, h / 2, self.itemClass.color, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, self.itemClass.outlineColor )
+
+    draw.SimpleTextOutlined( self.itemClass.text or "Text Hat", self:GetSkin().TabFont, w / 2, h / 2, self.itemClass.color or color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, self.itemClass.outlineColor or color_white )
 end
 
 vgui.Register( "DTexthatItemIcon", PANEL, "DPointshopItemIcon" )
