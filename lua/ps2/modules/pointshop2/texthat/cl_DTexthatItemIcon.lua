@@ -14,7 +14,7 @@ function PANEL:Paint( w, h )
     draw.SimpleTextOutlined( self.itemClass.text or "Text Hat", self:GetSkin().TabFont, w / 2, h / 2, self.itemClass.color or color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, self.itemClass.outlineColor or color_white )
 end
 
-vgui.Register( "DTexthatItemIcon", PANEL, "DPointshopItemIcon" )
+derma.DefineControl( "DTexthatItemIcon", "", PANEL, "DPointshopItemIcon" )
 
 local PANEL = {}
 
@@ -33,4 +33,4 @@ end
 function PANEL:Think( )
 end
 
-vgui.Register( "DTexthatInventoryIcon", PANEL, "DPointshopInventoryItemIcon" )
+derma.DefineControl( "DTexthatInventoryIcon", "", PANEL, "DPointshopInventoryItemIcon" )
