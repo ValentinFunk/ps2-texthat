@@ -18,15 +18,15 @@ async function createRelease () {
     ignore: ignoreGlobs
   })
   
-  mkdir('-p', 'dist/ps2-rewards')
-  folders.map(x => mkdir('dist/ps2-rewards/' + x))
+  mkdir('-p', 'dist/ps2-texthat')
+  folders.map(x => mkdir('dist/ps2-texthat/' + x))
 
   const files = glob.sync('**', {
     ignore: ignoreGlobs,
     nodir: true
   })
 
-  files.map(file => cp(file, 'dist/ps2-rewards/' + file))
+  files.map(file => cp(file, 'dist/ps2-texthat/' + file))
 
   cp('package.json', 'dist')
   cp('.gmodignore', 'dist')
